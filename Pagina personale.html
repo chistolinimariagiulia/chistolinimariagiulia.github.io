@@ -1,0 +1,627 @@
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+
+<script src="./jquery.min.js"></script>
+
+<style>
+
+h1 {
+    text-align: center;
+color: white;
+transform: scale(1.5,1.5)translate(0,20%);
+opacity: .70;
+}
+
+.quadratogrande {
+  height: 25px;
+  width: 25px;
+  transform:translate(-50%,-50%)rotate(45deg);
+}
+.quadratopiccolo {
+  height: 20px;
+  width: 20px;
+  transform:translate(-50%,-50%)scale(0.5,0.5);
+}
+
+#quadratino{
+background-color: rgba(255, 00, 00, 0.8);
+position: absolute;
+top: 27%;
+left: 18%;
+}
+
+ #quadrato {
+background-color: rgba(00, 00, 255, 0.2);
+position: absolute;
+top: 27%;
+left: 18%;
+}
+
+
+#quadratino2{
+background-color: rgba(255, 00, 00, 0.8);
+position: absolute;
+top: 27%;
+left: 35%;
+}
+
+ #quadrato2 {background-color: rgba(255, 255, 00, 0.2);
+ position: absolute;
+top: 27%;
+left: 35%;}
+
+
+#quadratino3{
+background-color: rgba(255, 00, 00, 0.8);
+position: absolute;
+top: 27%;
+left: 51%;
+}
+
+ #quadrato3 {background-color: rgba(255, 00, 00, 0.2);
+ position: absolute;
+top: 27%;
+left: 51%;}
+
+#quadratino4{
+background-color: rgba(255, 00, 00, 0.8);
+position: absolute;
+top: 27%;
+left: 68%;
+}
+
+ #quadrato4 {background-color: rgba(00, 255, 00, 0.2);
+ position: absolute;
+top: 27%;
+left: 68%;}
+
+.girare
+{
+  height: 25px;
+  width: 25px;
+  transform:translate(-50%,-50%);
+  animation: girare 0.5s forwards
+
+}
+
+@keyframes girare{
+
+  from
+  {transform: translate(-50%,-50%)rotate(0deg)}
+  to
+  {transform: translate(-50%,-50%)rotate(225deg)}
+}
+
+.rotate2
+{
+  height: 20px;
+  width: 20px;
+  transform:translate(-50%,-50%)scale(0.5,0.5);
+  animation: rotate2 0.5s forwards
+}
+
+@keyframes rotate2 { 0%{transform:translate(-50%,-50%)scale(0.5,0.5)rotate(0deg)}
+50%{transform:translate(-50%,-50%)scale(0.5,0.5)rotate(-225deg)}
+100%{transform:translate(-50%,-50%)scale(0.5,0.5)rotate(-225deg)}
+}
+
+
+
+body{
+  font-family: 'Karla', sans-serif;
+  background-image: url(./sfondo.jpg);
+  background-size: cover;
+}
+
+
+
+#t1{position: absolute;
+top:50px;
+left:300px;
+color: white}
+
+#sfondo {position: absolute;
+top:100%;
+left:100%
+height:800px;
+width:100%;
+color: green}
+
+
+.pigro{position: absolute;
+top:270px;
+background-color: black;
+height:2300px;
+width:100%;
+display: none;
+
+}
+
+#sezione1{background-color: rgba(35, 74, 216, 0.8);}
+#sezione2{background-color: rgba(239, 198, 106, 0.8);}
+#sezione3{background-color: rgba(255, 00, 00, 0.3);}
+#sezione4{background-color: rgba(167, 198, 167, 0.8);}
+
+.section{
+  position: absolute;
+  top:200px;
+  background-color: rgba(255, 00, 00) ;
+  color:white;
+  width:100px;
+  height:20px;
+  padding: 10px 25px;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 25px
+}
+
+.section:hover{background-color: rgba(255, 00, 00, 0.5)}
+
+
+#info{left:25%}
+#hobby{left:42%}
+#lavori{left:58%}
+#blasfemo{left:75%}
+
+
+#photos {
+  opacity: .88;
+}
+
+#photos img {
+  width: 30%;
+  float: left;
+  display: block;
+  margin: 2px;
+}
+
+ul {
+  list-style: none;
+  margin: 0px auto;
+  padding: 10px;
+  display: block;
+  max-width: 780px;
+  text-align: center;
+}
+
+#overlay {
+  background: rgba(0,0,0, .8);
+  width: 100%;
+  height: 1500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+}
+
+#overlay img {
+  margin: 10% auto 0;
+  width: 550px;
+  border-radius: 5px;
+}
+
+#photos {
+  width: 100%;
+}
+
+#photo-gallery {
+  width: 100%;
+}
+
+#Livello_2 {
+  position: absolute;
+  top:50px;
+  left:10%;
+}
+
+path {
+  stroke-dasharray: 900;
+  animation: animazionelinea 4s infinite;
+}
+
+@keyframes animazionelinea {
+  0%{
+    stroke-dashoffset: 0;
+  }
+
+  50%{
+    stroke-dashoffset: 900;
+  }
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+  <svg version="1.1" id="Livello_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  	 viewBox="0 0 1280 1024" style="enable-background:new 0 0 1280 1024;" xml:space="preserve">
+  <style type="text/css">
+  	.st0{fill:none;stroke:#FF0000;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+  </style>
+  <path class="st0" d="M855.9,441.2L855.9,441.2c-17.9,0.5-35.1,7.3-48.5,19.3l-19.1,17c-8.8,7.8-22.6,4.5-27-6.4l-5.4-13.5
+  	c-3.7-9.2,2.2-19.4,12-20.8l0.4-0.1c5.3-0.8,9.1,4.8,6.4,9.4c-6.2,10.5-15.2,25.7-20.3,34.3c-1.8,3.1-6.2,3.1-8.1,0.1l-8.1-13.3
+  	c-1.4-2.3-4.6-2.5-6.3-0.4l-12.3,15.2c-1.7,2.1-5,1.3-5.5-1.3l-4.3-19.9c-0.5-2.2-3.5-2.6-4.5-0.5l-18.5,40.5c-1,2.3-4.4,2-5-0.5
+  	l-7.3-29c-1.6-6.3-7.8-10.3-14.2-9.2l-45.6,8.2c-7.6,1.4-14.9-3.6-16.4-11.1l-0.1-0.4c-1-4.7,2.6-9,7.3-8.9l0.5,0
+  	c14.4,0.3,27.2,9.2,32.7,22.5l3,7.3c3.5,8.5-0.4,18.2-8.7,22l-0.3,0.1c-6.5,2.9-14,1.2-18.5-4.2c-4.1-5-9.2-11.1-12.9-15.7
+  	c-3-3.6-8.5-3.8-11.7-0.4l-6.2,6.6c-7.6,8.1-19,11.4-29.7,8.7l-3.1-0.8c-10.3-2.6-17.6-11.9-17.6-22.5v-6.2c0-8.2,7-14.7,15.2-14
+  	l0.8,0.1c3.5,0.3,4.5,4.9,1.6,6.7l-60.1,36.5c-5.5,3.3-12.5,0.1-13.6-6.2l-13.4-80c-1-5.9,6.4-9.5,10.4-5l1.8,2
+  	c8.6,9.5,9.9,23.6,3.3,34.6l-34,55.8c-12.2,20-41.5,18.9-52.2-1.8l0-0.1c-5.9-11.3-2.1-25.3,8.7-32.1l4.8-3
+  	c4.1-2.6,9.5-0.1,10.2,4.7l0.1,0.4c1.3,8.9-7.9,15.6-15.9,11.6c-7.7-3.8-16.4-8.2-23.9-12c-9-4.5-19.9,0.2-22.9,9.9l-7.8,25.8
+  	c-0.5,1.5-1.3,2.8-2.4,3.8c-4.1,3.7-10.7,2.1-12.9-3L319.7,477c-1.9-4.3-7.9-4.3-9.9-0.1l-9.9,21.9c-9.2,10.9-25.6,12-36.1,2.3
+  	l-11.1-10.4c-9.5-8.8-14.9-21.2-14.9-34.1v0c0-21.5,13.9-40.5,34.3-47.1l96.4-31c1.3-0.4,2.5-0.8,3.8-1.3
+  	c53.5-18.4,96.5-58.7,119.7-110.1c2.1-4.6,4.6-9,7.7-13l2.3-3.1c4.3-5.7,11.1-9,18.2-9l0,0c3,0,5.8,1.3,7.8,3.5l0,0
+  	c3.2,3.6,5.4,7.7,5.9,12.5l3,21"/>
+
+  </svg>
+
+
+
+<!--quadrati animati-->
+
+<div id="quadrato"class="quadratogrande" >
+</div>
+
+<div id="quadratino"class="quadratopiccolo" >
+</div>
+
+<div id="quadrato2"class="quadratogrande" >
+</div>
+
+<div id="quadratino2"class="quadratopiccolo" >
+</div>
+
+<div id="quadrato3"class="quadratogrande" >
+</div>
+
+<div id="quadratino3"class="quadratopiccolo" >
+</div>
+
+<div id="quadrato4"class="quadratogrande" >
+</div>
+
+<div id="quadratino4"class="quadratopiccolo" >
+</div>
+
+
+<div id="funz">
+<h1><b>MARIA GIULIA CHISTOLINI<b></h1>
+</div>
+
+
+<div id="info" class="section"><b>info<b></div>
+<div id="sezione1"class="pigro">
+<div id="sfondo"></div>
+
+<div id=t1>
+Sono nata a Marsciano (PG) l’11/10/1997,
+e vissuta ad Assisi, in provincia di Perugia;</br>
+qui ho frequentato il Liceo Classico Annibale Mariotti a indirizzo fisico-matematico.</br>
+Attualmente sono studentessa presso il Politecnico di Milano,</br>
+all’interno della facoltà di Design della Comunicazione.
+</div>
+</div>
+
+
+<div id="sezione2"class="pigro">
+  <div id="sfondo"></div>
+
+  <div id=t1>
+
+Mi considero una persona creativa.</br>
+I miei hobby riguardano per lo più attività artistiche.</br>
+Oltre ai progetti di design che realizzo per l’università,</br>
+mi piace cimentarmi nel disegno, nella pittura, nell’illustrazione, nella scrittura.</br>
+Da sempre sono anche appassionata di musica;</br>
+da qualche anno suono e frequento lezioni di chitarra.</br>
+Infine mi piace fare sport, infatti ho praticato ginnastica ritmica per dodici anni, ottenendo buoni risultati a livello nazionale.</br>
+</div>
+
+</div>
+
+
+<div id="hobby"class="section">hobby</div>
+
+<div id="sezione2"class="pigro"></div>
+
+<div id="lavori"class="section">disegni</div>
+<div id="sezione3"class="pigro">
+
+<div id="photos">
+    <ul id="photo-gallery">
+      <li>
+        <a href="./3aa.jpg">
+          <img src="./3aa.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./intero.jpg">
+          <img src="./prima.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./intero.jpg">
+          <img src="./seconda.jpg">
+        </a>
+      </li>
+
+      <li>
+        <a href="./avere.jpg">
+          <img src="./avere.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./bm.jpg">
+          <img src="./bm.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./gialli.jpg">
+          <img src="./gialli.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./mand.jpg">
+          <img src="./mand.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./11.jpg">
+          <img src="./11.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./isola.jpg">
+          <img src="./isola.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./coniglio1.jpg">
+          <img src="./coniglio1.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./7.jpg">
+          <img src="./7.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./mani.jpg">
+          <img src="./mani.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./occhi.jpg">
+          <img src="./occhi.jpg">
+        </a>
+      </li>
+
+      <li>
+        <a href="./333.jpg">
+          <img src="./333.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./filo.jpg">
+          <img src="./filo.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./018.jpg">
+          <img src="./018.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./20.jpg">
+          <img src="./20.jpg">
+        </a>
+      </li>
+       <li>
+          <a href="./019.jpg">
+            <img src="./019.jpg">
+          </a>
+        </li>
+      <li>
+        <a href="./1a.jpg">
+          <img src="./1a.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./1b.jpg">
+          <img src="./1b.jpg">
+        </a>
+      </li>
+      <li>
+        <a href="./as.jpg">
+          <img src="./as.jpg">
+        </a>
+      </li>
+
+
+
+
+    </ul>
+  </div>
+
+</div>
+
+<div id="blasfemo"class="section">contatti</div>
+<div id="sezione4" class="pigro">
+<div id=t1>
+
+<b>mariagiulia.chistolini@mail.polimi.it </b></br>
+<b>334 253999</b></br>
+</div>
+</div>
+
+
+<script>
+var cliccate =0;
+
+function sez1()
+
+{$("#sezione1").fadeIn()
+  $("#sezione2").fadeOut()
+  $("#sezione3").fadeOut()
+  $("#sezione4").fadeOut()
+    $("path").fadeOut()
+}
+
+function sez2()
+
+{$("#sezione2").fadeIn()
+  $("#sezione1").fadeOut()
+  $("#sezione3").fadeOut()
+  $("#sezione4").fadeOut()
+  $("path").fadeOut()
+}
+
+function sez3()
+
+{$("#sezione3").fadeIn()
+  $("#sezione2").fadeOut()
+  $("#sezione1").fadeOut()
+  $("#sezione4").fadeOut()
+  $("path").fadeOut()
+}
+
+function sez4()
+
+{$("#sezione4").fadeIn()
+  $("#sezione2").fadeOut()
+  $("#sezione3").fadeOut()
+  $("#sezione1").fadeOut()
+  $("path").fadeOut()
+}
+
+$("#info").on("click",sez1)
+$("#hobby").on("click",sez2)
+$("#lavori").on("click",sez3)
+$("#blasfemo").on("click",sez4)
+
+
+
+$("#funz").css({"color":"red"})
+
+var $overlay = $('<div id="overlay"></div>');
+var $image = $("<img>");
+
+function iquadratiruotano() {
+  $("#quadrato").addClass("girare");
+  $("#quadratino").addClass("rotate2");
+  $("#quadrato").removeClass("quadratogrande");
+  $("#quadratino").removeClass("quadratopiccolo");
+}
+
+$("#info").on("click",iquadratiruotano)
+
+function iquadrati2ruotano() {
+  $("#quadrato2").addClass("girare");
+  $("#quadratino2").addClass("rotate2");
+  $("#quadrato2").removeClass("quadratogrande");
+  $("#quadratino2").removeClass("quadratopiccolo");
+}
+
+$("#hobby").on("click",iquadrati2ruotano)
+
+function iquadrati3ruotano() {
+  $("#quadrato3").addClass("girare");
+  $("#quadratino3").addClass("rotate2");
+  $("#quadrato3").removeClass("quadratogrande");
+  $("#quadratino3").removeClass("quadratopiccolo");
+}
+
+$("#lavori").on("click",iquadrati3ruotano)
+
+function iquadrati4ruotano() {
+  $("#quadrato4").addClass("girare");
+  $("#quadratino4").addClass("rotate2");
+  $("#quadrato4").removeClass("quadratogrande");
+  $("#quadratino4").removeClass("quadratopiccolo");
+}
+
+$("#blasfemo").on("click",iquadrati4ruotano)
+
+
+function contatore ()
+{
+if (cliccate==0) {
+  iquadratiruotano()
+  cliccate=1
+} else if (cliccate==1) {
+  $("#quadrato").addClass("quadratogrande");
+  $("#quadratino").addClass("quadratopiccolo");
+  $("#quadrato").removeClass("girare");
+  $("#quadratino").removeClass("rotate2");
+  cliccate=0
+}
+}
+$("#info").on("click", contatore)
+
+function contatore2 ()
+{
+if (cliccate==0) {
+  iquadrati2ruotano()
+  cliccate=1
+} else if (cliccate==1) {
+  $("#quadrato2").addClass("quadratogrande");
+  $("#quadratino2").addClass("quadratopiccolo");
+  $("#quadrato2").removeClass("girare");
+  $("#quadratino2").removeClass("rotate2");
+  cliccate=0
+}
+}
+$("#hobby").on("click", contatore2)
+
+
+function contatore3 ()
+{
+if (cliccate==0) {
+  iquadrati3ruotano()
+  cliccate=1
+} else if (cliccate==1) {
+  $("#quadrato3").addClass("quadratogrande");
+  $("#quadratino3").addClass("quadratopiccolo");
+  $("#quadrato3").removeClass("girare");
+  $("#quadratino3").removeClass("rotate2");
+  cliccate=0
+}
+}
+$("#lavori").on("click", contatore3)
+
+//An image to overlay
+$overlay.append($image);
+
+//Add overlay
+$("body").append($overlay);
+
+  //click the image and a scaled version of the full size image will appear
+  $("#photo-gallery a").click( function(event) {
+    event.preventDefault();
+    var imageLocation = $(this).attr("href");
+
+    //update overlay with the image linked in the link
+    $image.attr("src", imageLocation);
+
+    //show the overlay
+    $overlay.show();
+  } );
+
+  $("#overlay").click(function() {
+    $( "#overlay" ).hide();
+  });
+
+</script>
+</body>
+</html>
