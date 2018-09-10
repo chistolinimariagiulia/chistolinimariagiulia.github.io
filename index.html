@@ -1,256 +1,75 @@
 <html>
+
 <head>
-<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+  <title>Maria Giulia Chistolini</title>
 
-<script src="./jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Meddon" rel="stylesheet">
 
-<style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
-h1 {
-    text-align: center;
-color: white;
-transform: scale(1.5,1.5)translate(0,20%);
-opacity: .70;
-}
-
-.quadratogrande {
-  height: 25px;
-  width: 25px;
-  transform:translate(-50%,-50%)rotate(45deg);
-}
-.quadratopiccolo {
-  height: 20px;
-  width: 20px;
-  transform:translate(-50%,-50%)scale(0.5,0.5);
-}
-
-#quadratino{
-background-color: rgba(255, 00, 00, 0.8);
-position: absolute;
-top: 27%;
-left: 18%;
-}
-
- #quadrato {
-background-color: rgba(00, 00, 255, 0.2);
-position: absolute;
-top: 27%;
-left: 18%;
-}
-
-
-#quadratino2{
-background-color: rgba(255, 00, 00, 0.8);
-position: absolute;
-top: 27%;
-left: 35%;
-}
-
- #quadrato2 {background-color: rgba(255, 255, 00, 0.2);
- position: absolute;
-top: 27%;
-left: 35%;}
-
-
-#quadratino3{
-background-color: rgba(255, 00, 00, 0.8);
-position: absolute;
-top: 27%;
-left: 51%;
-}
-
- #quadrato3 {background-color: rgba(255, 00, 00, 0.2);
- position: absolute;
-top: 27%;
-left: 51%;}
-
-#quadratino4{
-background-color: rgba(255, 00, 00, 0.8);
-position: absolute;
-top: 27%;
-left: 68%;
-}
-
- #quadrato4 {background-color: rgba(00, 255, 00, 0.2);
- position: absolute;
-top: 27%;
-left: 68%;}
-
-.girare
-{
-  height: 25px;
-  width: 25px;
-  transform:translate(-50%,-50%);
-  animation: girare 0.5s forwards
-
-}
-
-@keyframes girare{
-
-  from
-  {transform: translate(-50%,-50%)rotate(0deg)}
-  to
-  {transform: translate(-50%,-50%)rotate(225deg)}
-}
-
-.rotate2
-{
-  height: 20px;
-  width: 20px;
-  transform:translate(-50%,-50%)scale(0.5,0.5);
-  animation: rotate2 0.5s forwards
-}
-
-@keyframes rotate2 { 0%{transform:translate(-50%,-50%)scale(0.5,0.5)rotate(0deg)}
-50%{transform:translate(-50%,-50%)scale(0.5,0.5)rotate(-225deg)}
-100%{transform:translate(-50%,-50%)scale(0.5,0.5)rotate(-225deg)}
-}
-
-
-
-body{
-  font-family: 'Karla', sans-serif;
-  background-image: url(./sfondo.jpg);
-  background-size: cover;
-}
-
-
-
-#t1{position: absolute;
-top:50px;
-left:300px;
-color: white}
-
-#sfondo {position: absolute;
-top:100%;
-left:100%
-height:800px;
-width:100%;
-color: green}
-
-
-.pigro{position: absolute;
-top:270px;
-background-color: black;
-height:2300px;
-width:100%;
-display: none;
-
-}
-
-#sezione1{background-color: rgba(35, 74, 216, 0.8);}
-#sezione2{background-color: rgba(239, 198, 106, 0.8);}
-#sezione3{background-color: rgba(255, 00, 00, 0.3);}
-#sezione4{background-color: rgba(167, 198, 167, 0.8);}
-
-.section{
-  position: absolute;
-  top:200px;
-  background-color: rgba(255, 00, 00) ;
-  color:white;
-  width:100px;
-  height:20px;
-  padding: 10px 25px;
-  transform:translate(-50%,-50%);
-  text-align:center;
-  transition: 0.5s;
-  cursor: pointer;
-  border-radius: 25px
-}
-
-.section:hover{background-color: rgba(255, 00, 00, 0.5)}
-
-
-#info{left:25%}
-#hobby{left:42%}
-#lavori{left:58%}
-#blasfemo{left:75%}
-
-
-#photos {
-  opacity: .88;
-}
-
-#photos img {
-  width: 30%;
-  float: left;
-  display: block;
-  margin: 2px;
-}
-
-ul {
-  list-style: none;
-  margin: 0px auto;
-  padding: 10px;
-  display: block;
-  max-width: 780px;
-  text-align: center;
-}
-
-#overlay {
-  background: rgba(0,0,0, .8);
-  width: 100%;
-  height: 1500px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  text-align: center;
-}
-
-#overlay img {
-  margin: 10% auto 0;
-  width: 550px;
-  border-radius: 5px;
-}
-
-#photos {
-  width: 100%;
-}
-
-#photo-gallery {
-  width: 100%;
-}
-
-#Livello_2 {
-  position: absolute;
-  top:50px;
-  left:10%;
-}
-
-path {
-  stroke-dasharray: 900;
-  animation: animazionelinea 4s infinite;
-}
-
-@keyframes animazionelinea {
-  0%{
-    stroke-dashoffset: 0;
-  }
-
-  50%{
-    stroke-dashoffset: 900;
-  }
-  100%{
-    stroke-dashoffset: 0;
-  }
-}
-
-
-
-
-</style>
-
+  <script src="./jquery.min.js"></script>
+  <script src="./scripts.js"></script>
 </head>
 
 <body>
 
+  <div id="funz" onclick="navigateHome()">
+    <img src="images/PageTitle.png" />
+  </div>
+
+
   <svg version="1.1" id="Livello_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-  	 viewBox="0 0 1280 1024" style="enable-background:new 0 0 1280 1024;" xml:space="preserve">
+  	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
   <style type="text/css">
-  	.st0{fill:none;stroke:#FF0000;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+  	.st0{opacity:0.8;fill:none;stroke:#DB1A00;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
   </style>
-  <path class="st0" d="M855.9,441.2L855.9,441.2c-17.9,0.5-35.1,7.3-48.5,19.3l-19.1,17c-8.8,7.8-22.6,4.5-27-6.4l-5.4-13.5
+  <path transform="translate(70, 220)" class="st0" d="M940.5,237.2l-17.5,4.1c-20.2,4.7-41.5,3.5-60.9-3.4l-0.7-0.2c-14.6-5.2-30.5-5.6-45.3-1.2
+  	c-0.8,0.2-1.5,0.4-2.3,0.7c-23.6,7-42.3,23.4-50.9,44.7l-0.4,0.9c-10.6,26.3-16,54-16,81.8c0,3.7,0,7.5,0,11.3
+  	c0,27.8-9.3,55-26.6,77.8l0,0c-10.9,14.3-24.4,25.4-40.2,36.7l-22.2,17.1c-16.6,12.7-31,27.7-42.8,44.3l0,0
+  	c-5.2,7.3-8.3,15.6-9.2,24.1c-0.8,7,1.3,14.1,5.7,19.9l0.1,0.2c3.3,4.4,8.3,7.2,14,8c0,0,0,0,0,0c7.3,1,14.8-0.2,21.2-3.5l2.9-1.9
+  	c6.6-4.4,11.5-10.6,14.1-17.7l7-20.2l-2.2,24.9c-0.2,2.4,0,4.8,0.9,7c1.3,3.5,3.9,6.6,7.4,8.8l0.3,0.2c6,3.7,13.5,4.3,20.1,1.7
+  	l0.3-0.1c7.6-3,12.8-9.5,13.8-16.9l0.2-1.9c0.6-4.4,2.6-8.5,5.7-11.9c1.7-1.7,4-2.8,6.5-3.1l0.2,0c2.4-0.3,4.7,0,7,0.8l0.1,0.1
+  	c4.1,1.5,8.8,0.9,12.3-1.7v0c1.5-1.1,2.7-2.5,3.4-4.1c0.7-1.6,1-3.3,0.7-5c-0.6-4.1-4.2-7.3-8.7-8.1l0,0c-2-0.4-4.1-0.4-6.1,0
+  	c-1.1,0.2-2.1,0.6-3.1,1.1l0,0c-5.4,2.8-9.3,7.5-10.9,12.9c-0.1,0.4-0.2,0.9-0.3,1.4l-0.7,3.5c-1.3,6.9-0.1,13.9,3.2,20.2l0.2,0.3
+  	c3,5.5,7.9,9.9,13.9,12.5c0.3,0.1,0.7,0.3,1,0.4c6.7,2.9,14.6,2.5,20.8-1.2l0.6-0.4c9.2-5.4,16.4-13.3,20.6-22.6l0.2-0.5
+  	c1.6-3.7,2.8-7.5,3.5-11.4l0.1-0.6c1.6-9.1,6.9-17.4,14.9-23.1l0.6-0.4c6.9-4.9,12.4-11.4,15.9-18.7c0.1-0.2,0.2-0.4,0.3-0.6
+  	c2.2-4.4,4-9,5.4-13.7l0.2-0.5c2.3-7.4,1.2-15.3-3-22l-0.2-0.3c-2-3.1-5.4-5.2-9.2-5.6l-0.2,0c-5.4-0.7-10.6,1.5-13.6,5.7l0,0
+  	c-2.2,3.1-4,6.4-5.1,10c-0.8,2.5-1.3,5.1-1.5,7.8l-0.8,8.8c-0.4,4.7-0.6,9.4-0.6,14.1v14.9v10.2c0,2.9,0.2,5.8,0.6,8.7l0,0
+  	c0.7,5.4,2,10.7,3.9,15.8c1.3,3.6,3.5,6.9,6.2,9.7l0.2,0.2c3.8,3.8,8.6,6.5,13.9,7.9l0.5,0.1c3.8,1,7.8,1,11.5,0l0.2-0.1
+  	c5-1.3,9-4.9,10.6-9.4l2.8-7.7c0.4-1,0.8-2,1.2-3l0.9-2.2c0.8-1.8,2.9-7.8,4.9-11.4c1.3-2.5,5.4-1.7,9.9,0.2
+  	c2.3,0.9,4.7,2.2,6.9,3.4c4.6,2.5,10.5,0.7,12.5-3.8c0,0,0-0.1,0-0.1l0.1-0.3c0.7-1.6,0.5-3.3-0.4-4.8l-0.2-0.3
+  	c-2.6-4.1-7.5-6.4-12.7-6.1l-0.2,0c-4.1,0.3-8,2-10.7,4.9l0,0c-1.9,2.1-3.6,4.2-5.2,6.5c-3.3,4.8-5.3,10.3-6.1,16l0,0.3
+  	c-0.3,2.5-0.3,5,0.2,7.5c0,0.2,0.1,0.4,0.1,0.6c0.8,4.4,3.2,8.4,6.8,11.5c0.2,0.2,0.4,0.4,0.7,0.6c4.3,3.6,10,5.4,15.8,5l0.3,0
+  	c7.4-0.6,14.3-3.4,19.7-8l0.2-0.2c3.9-3.3,7.3-7,10.2-11c2.6-3.6,5.5-7.6,5.5-7.6l2.1,12.7c1.2,7.6,6.3,14.1,13.7,17.7l0.2,0.1
+  	c3.3,1.6,7,1.8,10.5,0.7l0.3-0.1c7.3-2.4,13.6-6.9,17.8-13l0.1-0.2c2.2-3.2,3.2-7.1,2.8-10.9l0-0.3c-0.8-7.3-5.1-13.8-11.6-18v0
+  	c-4.8-3.1-10.7-4.2-16.3-3.3c-2.6,0.4-4.9,2-6.1,4.2l0,0.1c-2,3.5-1.8,7.8,0.6,11.1l0.1,0.2c2.4,3.4,6.7,5.3,11.1,5l0.3,0
+  	c4.3-0.3,8.4-1.7,11.7-4.1l0.1-0.1c2.5-1.8,4.6-3.9,6.3-6.2l4.2-5.9c3.4-4.7,8.1-7.2,13.3-7.6l0.5,0c3.5-0.2,6.9,0.9,9.4,3l0.2,0.1
+  	c5,4.2,8.2,10,8.8,16.2l0.3,2.7c0.5,4.6,0.5,9.2,0,13.7l-1.3,11.5l1.1-10.4c1-9.1,4.7-17.7,10.9-24.8l0.4-0.4
+  	c3.1-3.5,8.2-5,12.9-3.6l0.4,0.1c3.4,1,6.1,3.5,7.1,6.7l0.1,0.2c0.8,2.6,1.3,5.3,1.4,8c0.3,6.9,0.8,19.8,0.8,20.5
+  	c0,0.4,0.6-2.9,1.2-6.9c1.2-7.6,3.7-15.1,7.3-22.1h0c2.4-4.5,6.5-8.1,11.5-9.9c1.7-0.6,3.6-0.7,5.4-0.3l0.2,0
+  	c1.5,0.4,2.8,1.3,3.6,2.5l0,0.1c1.1,1.7,1.8,3.7,2.1,5.7l0.4,3.1c0.8,6.1,3,12,6.6,17.2l0.5,0.7c2.7,3.9,7.4,6.1,12.4,5.8l0.3,0
+  	c6.6-0.3,12.5-3.6,16-8.7c0.5-0.8,1-1.5,1.5-2.1c1-1.4,1.9-2.9,2.7-4.4l1.8-3.4c2.8-5.3,8.4-9,14.8-9.9l5.1-0.8
+  	c5.9-0.9,10.6-4.8,12.2-10.1l0.1-0.4c0.9-3-0.3-6-3-7.8l-0.2-0.1c-5.5-3.6-13-3.3-18.2,0.7l0,0c-6.4,5-10.1,12.3-10.1,20v0
+  	c0,7,2.6,13.9,7.2,19.4c0.6,0.7,1.4,1.4,2.1,2l2.7,2.1c3.9,3.1,8.4,5.2,13.1,6.3l0,0c9.9,2.4,20.4,0.1,28.2-5.9l14.6-11.4
+  	c13.3-10.3,28.1-18.9,43.9-25.5l1-0.4c13.9-5.3,28.8-8.4,43.8-9h0c12.7-0.6,25.4,1.1,37.4,5l3.4,1.1c14.1,4.5,27.2,11.5,38.4,20.6
+  	l0,0"/>
+  </svg>
+
+
+  <!-- old version
+  <svg version="1.1" id="Livello_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 1280 1024">
+    <style type="text/css">
+      .st0 {
+        fill: none;
+        stroke: #FF0000;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+    </style>
+    <path transform="translate(120)" class="st0" d="M855.9,441.2L855.9,441.2c-17.9,0.5-35.1,7.3-48.5,19.3l-19.1,17c-8.8,7.8-22.6,4.5-27-6.4l-5.4-13.5
   	c-3.7-9.2,2.2-19.4,12-20.8l0.4-0.1c5.3-0.8,9.1,4.8,6.4,9.4c-6.2,10.5-15.2,25.7-20.3,34.3c-1.8,3.1-6.2,3.1-8.1,0.1l-8.1-13.3
   	c-1.4-2.3-4.6-2.5-6.3-0.4l-12.3,15.2c-1.7,2.1-5,1.3-5.5-1.3l-4.3-19.9c-0.5-2.2-3.5-2.6-4.5-0.5l-18.5,40.5c-1,2.3-4.4,2-5-0.5
   	l-7.3-29c-1.6-6.3-7.8-10.3-14.2-9.2l-45.6,8.2c-7.6,1.4-14.9-3.6-16.4-11.1l-0.1-0.4c-1-4.7,2.6-9,7.3-8.9l0.5,0
@@ -262,366 +81,287 @@ path {
   	c-0.5,1.5-1.3,2.8-2.4,3.8c-4.1,3.7-10.7,2.1-12.9-3L319.7,477c-1.9-4.3-7.9-4.3-9.9-0.1l-9.9,21.9c-9.2,10.9-25.6,12-36.1,2.3
   	l-11.1-10.4c-9.5-8.8-14.9-21.2-14.9-34.1v0c0-21.5,13.9-40.5,34.3-47.1l96.4-31c1.3-0.4,2.5-0.8,3.8-1.3
   	c53.5-18.4,96.5-58.7,119.7-110.1c2.1-4.6,4.6-9,7.7-13l2.3-3.1c4.3-5.7,11.1-9,18.2-9l0,0c3,0,5.8,1.3,7.8,3.5l0,0
-  	c3.2,3.6,5.4,7.7,5.9,12.5l3,21"/>
+  	c3.2,3.6,5.4,7.7,5.9,12.5l3,21" />
 
   </svg>
+  -->
 
+  <!--quadrati animati-->
 
-
-<!--quadrati animati-->
-
-<div id="quadrato"class="quadratogrande" >
-</div>
-
-<div id="quadratino"class="quadratopiccolo" >
-</div>
-
-<div id="quadrato2"class="quadratogrande" >
-</div>
-
-<div id="quadratino2"class="quadratopiccolo" >
-</div>
-
-<div id="quadrato3"class="quadratogrande" >
-</div>
-
-<div id="quadratino3"class="quadratopiccolo" >
-</div>
-
-<div id="quadrato4"class="quadratogrande" >
-</div>
-
-<div id="quadratino4"class="quadratopiccolo" >
-</div>
-
-
-<div id="funz">
-<h1><b>MARIA GIULIA CHISTOLINI<b></h1>
-</div>
-
-
-<div id="info" class="section"><b>info<b></div>
-<div id="sezione1"class="pigro">
-<div id="sfondo"></div>
-
-<div id=t1>
-Sono nata a Marsciano (PG) l’11/10/1997,
-e vissuta ad Assisi, in provincia di Perugia;</br>
-qui ho frequentato il Liceo Classico Annibale Mariotti a indirizzo fisico-matematico.</br>
-Attualmente sono studentessa presso il Politecnico di Milano,</br>
-all’interno della facoltà di Design della Comunicazione.
-</div>
-</div>
-
-
-<div id="sezione2"class="pigro">
-  <div id="sfondo"></div>
-
-  <div id=t1>
-
-Mi considero una persona creativa.</br>
-I miei hobby riguardano per lo più attività artistiche.</br>
-Oltre ai progetti di design che realizzo per l’università,</br>
-mi piace cimentarmi nel disegno, nella pittura, nell’illustrazione, nella scrittura.</br>
-Da sempre sono anche appassionata di musica;</br>
-da qualche anno suono e frequento lezioni di chitarra.</br>
-Infine mi piace fare sport, infatti ho praticato ginnastica ritmica per dodici anni, ottenendo buoni risultati a livello nazionale.</br>
-</div>
-
-</div>
-
-
-<div id="hobby"class="section">hobby</div>
-
-<div id="sezione2"class="pigro"></div>
-
-<div id="lavori"class="section">disegni</div>
-<div id="sezione3"class="pigro">
-
-<div id="photos">
-    <ul id="photo-gallery">
-      <li>
-        <a href="./3aa.jpg">
-          <img src="./3aa.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./intero.jpg">
-          <img src="./prima.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./intero.jpg">
-          <img src="./seconda.jpg">
-        </a>
-      </li>
-
-      <li>
-        <a href="./avere.jpg">
-          <img src="./avere.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./bm.jpg">
-          <img src="./bm.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./gialli.jpg">
-          <img src="./gialli.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./mand.jpg">
-          <img src="./mand.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./11.jpg">
-          <img src="./11.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./isola.jpg">
-          <img src="./isola.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./coniglio1.jpg">
-          <img src="./coniglio1.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./7.jpg">
-          <img src="./7.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./mani.jpg">
-          <img src="./mani.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./occhi.jpg">
-          <img src="./occhi.jpg">
-        </a>
-      </li>
-
-      <li>
-        <a href="./333.jpg">
-          <img src="./333.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./filo.jpg">
-          <img src="./filo.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./018.jpg">
-          <img src="./018.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./20.jpg">
-          <img src="./20.jpg">
-        </a>
-      </li>
-       <li>
-          <a href="./019.jpg">
-            <img src="./019.jpg">
-          </a>
-        </li>
-      <li>
-        <a href="./1a.jpg">
-          <img src="./1a.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./1b.jpg">
-          <img src="./1b.jpg">
-        </a>
-      </li>
-      <li>
-        <a href="./as.jpg">
-          <img src="./as.jpg">
-        </a>
-      </li>
-
-
-
-
-    </ul>
+  <div id="quadrato" class="quadratogrande">
   </div>
 
-</div>
+  <div id="quadratino" class="quadratopiccolo">
+  </div>
 
-<div id="blasfemo"class="section">contatti</div>
-<div id="sezione4" class="pigro">
-<div id=t1>
+  <div id="quadrato2" class="quadratogrande">
+  </div>
 
-<b>mariagiulia.chistolini@mail.polimi.it </b></br>
-<b>334 253999</b></br>
-</div>
-</div>
+  <div id="quadratino2" class="quadratopiccolo">
+  </div>
 
+  <div id="quadrato3" class="quadratogrande">
+  </div>
 
-<script>
-var cliccate =0;
+  <div id="quadratino3" class="quadratopiccolo">
+  </div>
 
-function sez1()
+  <div id="quadrato4" class="quadratogrande">
+  </div>
 
-{$("#sezione1").fadeIn()
-  $("#sezione2").fadeOut()
-  $("#sezione3").fadeOut()
-  $("#sezione4").fadeOut()
-    $("path").fadeOut()
-}
+  <div id="quadratino4" class="quadratopiccolo">
+  </div>
 
-function sez2()
+  <div id="quadrato5" class="quadratogrande">
+  </div>
 
-{$("#sezione2").fadeIn()
-  $("#sezione1").fadeOut()
-  $("#sezione3").fadeOut()
-  $("#sezione4").fadeOut()
-  $("path").fadeOut()
-}
+  <div id="quadratino5" class="quadratopiccolo">
+  </div>
 
-function sez3()
+  <img src="images/bg.jpg" class="background-image" />
 
-{$("#sezione3").fadeIn()
-  $("#sezione2").fadeOut()
-  $("#sezione1").fadeOut()
-  $("#sezione4").fadeOut()
-  $("path").fadeOut()
-}
-
-function sez4()
-
-{$("#sezione4").fadeIn()
-  $("#sezione2").fadeOut()
-  $("#sezione3").fadeOut()
-  $("#sezione1").fadeOut()
-  $("path").fadeOut()
-}
-
-$("#info").on("click",sez1)
-$("#hobby").on("click",sez2)
-$("#lavori").on("click",sez3)
-$("#blasfemo").on("click",sez4)
+  <div id="info" class="section" onclick="sez1();iquadratiruotano();contatore()"><b>about me</b></div>
+  <div id="hobby" class="section" onclick="sez2();iquadrati2ruotano();contatore2()"><b>hobby</b></div>
+  <div id="lavori" class="section" onclick="sez3();iquadrati3ruotano();contatore3()"><b>disegni</b></div>
+  <div id="renderings" class="section" onclick="sez4();iquadrati4ruotano();contatore4()"><b>renderings</b></div>
+  <div id="blasfemo" class="section" onclick="sez5();iquadrati5ruotano();contatore5()"><b>contatti</b></div>
 
 
+  <div id="sezione1" class="pigro">
+    <div class=t1>
+      <img src="photos/aboutme.JPG" />
+      Sono nata a Marsciano (PG) l’11/10/1997, e vissuta ad Assisi, in provincia di Perugia;<br />
+      qui ho frequentato il Liceo Classico Annibale Mariotti a indirizzo fisico-matematico.<br />
+      Attualmente sono studentessa presso il Politecnico di Milano,<br />
+      all’interno della facoltà di Design della Comunicazione.<br />
+      Ho sempre avuto la passione per il disegno e la grafica.<br />
+      Nella pagina sono presenti alcuni miei lavori, articolati in disegni a mano <br />
+      e renderings elaborati in vista di progetti universitari.
+    </div>
+  </div>
 
-$("#funz").css({"color":"red"})
+  <div id="sezione2" class="pigro">
+    <div class=t1>
+      <img class="leftside" src="photos/hobby1.jpg" />
+      Mi considero una persona creativa.<br />
+      I miei hobby riguardano per lo più attività artistiche.<br />
+      Oltre ai progetti di design che realizzo per l’università,<br />
+      mi piace cimentarmi nel disegno, nella pittura, nell’illustrazione, nella scrittura.<br />
+      Da sempre sono anche appassionata di musica;<br />
+      da qualche anno suono e frequento lezioni di chitarra.<br />
+      Infine mi piace fare sport, infatti ho praticato ginnastica ritmica per dodici anni, ottenendo buoni risultati a livello
+      nazionale.<br />
 
-var $overlay = $('<div id="overlay"></div>');
-var $image = $("<img>");
+      <img class="bottomer" src="photos/hobby3.jpg" />
+      <img class="bottomer" src="photos/hobby2.jpg" />
+    </div>
 
-function iquadratiruotano() {
-  $("#quadrato").addClass("girare");
-  $("#quadratino").addClass("rotate2");
-  $("#quadrato").removeClass("quadratogrande");
-  $("#quadratino").removeClass("quadratopiccolo");
-}
+  </div>
 
-$("#info").on("click",iquadratiruotano)
+  <div id="sezione3" class="pigro">
 
-function iquadrati2ruotano() {
-  $("#quadrato2").addClass("girare");
-  $("#quadratino2").addClass("rotate2");
-  $("#quadrato2").removeClass("quadratogrande");
-  $("#quadratino2").removeClass("quadratopiccolo");
-}
+    <div class="photos">
+      <ul class="photo-gallery">
+        <li>
+          <a href="./images/3aa.jpg">
+            <img src="./images/thumbs/3aa.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/intero.jpg">
+            <img src="./images/thumbs/prima.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/intero.jpg">
+            <img src="./images/thumbs/seconda.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/avere.jpg">
+            <img src="./images/thumbs/avere.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/bm.jpg">
+            <img src="./images/thumbs/bm.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/gialli.jpg">
+            <img src="./images/thumbs/gialli.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/mand.jpg">
+            <img src="./images/thumbs/mand.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/11.jpg">
+            <img src="./images/thumbs/11.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/isola.jpg">
+            <img src="./images/thumbs/isola.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/coniglio1.jpg">
+            <img src="./images/thumbs/coniglio1.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/7.jpg">
+            <img src="./images/thumbs/7.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/mani.jpg">
+            <img src="./images/thumbs/mani.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/occhi.jpg">
+            <img src="./images/thumbs/occhi.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/333.jpg">
+            <img src="./images/333.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/filo.jpg">
+            <img src="./images/thumbs/filo.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/018.jpg">
+            <img src="./images/thumbs/018.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/20.jpg">
+            <img src="./images/thumbs/20.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/019.jpg">
+            <img src="./images/thumbs/019.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/1a.jpg">
+            <img src="./images/thumbs/1a.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/1b.jpg">
+            <img src="./images/thumbs/1b.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./images/as.jpg">
+            <img src="./images/as.jpg">
+          </a>
+        </li>
+      </ul>
+    </div>
 
-$("#hobby").on("click",iquadrati2ruotano)
+  </div>
 
-function iquadrati3ruotano() {
-  $("#quadrato3").addClass("girare");
-  $("#quadratino3").addClass("rotate2");
-  $("#quadrato3").removeClass("quadratogrande");
-  $("#quadratino3").removeClass("quadratopiccolo");
-}
+  <div id="sezione4" class="pigro">
 
-$("#lavori").on("click",iquadrati3ruotano)
+    <div class="photos">
+      <ul class="photo-gallery">
+        <li>
+          <a href="./renderings/301_render01.jpg">
+            <img src="./renderings/301_render01.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/301_render02.jpg">
+            <img src="./renderings/301_render02.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/301_render03.jpg">
+            <img src="./renderings/301_render03.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/301_render04.jpg">
+            <img src="./renderings/301_render04.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/amor omnia.png">
+            <img src="./renderings/amor omnia.png">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/BATTESIMO.png">
+            <img src="./renderings/BATTESIMO.png">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/COPERTINA.png">
+            <img src="./renderings/COPERTINA.png">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/definitivo_da sola_100.png">
+            <img src="./renderings/definitivo_da sola_100.png">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/Festa.png">
+            <img src="./renderings/Festa.png">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/principe rifiutato.png">
+            <img src="./renderings/principe rifiutato.png">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/SISTEMATO_feliciecontenti110.png">
+            <img src="./renderings/SISTEMATO_feliciecontenti110.png">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/SISTEMATO_Il risveglio 060.png">
+            <img src="./renderings/SISTEMATO_Il risveglio 060.png">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/z.jpg">
+            <img src="./renderings/z.jpg">
+          </a>
+        </li>
+        <li>
+          <a href="./renderings/zz.jpg">
+            <img src="./renderings/zz.jpg">
+          </a>
+        </li>
+      </ul>
+    </div>
 
-function iquadrati4ruotano() {
-  $("#quadrato4").addClass("girare");
-  $("#quadratino4").addClass("rotate2");
-  $("#quadrato4").removeClass("quadratogrande");
-  $("#quadratino4").removeClass("quadratopiccolo");
-}
+  </div>
 
-$("#blasfemo").on("click",iquadrati4ruotano)
+  <div id="sezione5" class="pigro">
+    <div class="t1 contatti">
+      <svg aria-hidden="true" data-prefix="far" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z" class=""></path></svg>
+      <b><a href="mailto:mariagiulia.chistolini@mail.polimi.it">mariagiulia.chistolini@mail.polimi.it</a></b><br />
+      <svg aria-hidden="true" data-prefix="far" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M476.5 22.9L382.3 1.2c-21.6-5-43.6 6.2-52.3 26.6l-43.5 101.5c-8 18.6-2.6 40.6 13.1 53.4l40 32.7C311 267.8 267.8 311 215.4 339.5l-32.7-40c-12.8-15.7-34.8-21.1-53.4-13.1L27.7 329.9c-20.4 8.7-31.5 30.7-26.6 52.3l21.7 94.2c4.8 20.9 23.2 35.5 44.6 35.5C312.3 512 512 313.7 512 67.5c0-21.4-14.6-39.8-35.5-44.6zM69.3 464l-20.9-90.7 98.2-42.1 55.7 68.1c98.8-46.4 150.6-98 197-197l-68.1-55.7 42.1-98.2L464 69.3C463 286.9 286.9 463 69.3 464z" class=""></path></svg>
+      <b>334 253999</b><br />
+      <img src="photos/contatti.jpg" />
+    </div>
+  </div>
 
-
-function contatore ()
-{
-if (cliccate==0) {
-  iquadratiruotano()
-  cliccate=1
-} else if (cliccate==1) {
-  $("#quadrato").addClass("quadratogrande");
-  $("#quadratino").addClass("quadratopiccolo");
-  $("#quadrato").removeClass("girare");
-  $("#quadratino").removeClass("rotate2");
-  cliccate=0
-}
-}
-$("#info").on("click", contatore)
-
-function contatore2 ()
-{
-if (cliccate==0) {
-  iquadrati2ruotano()
-  cliccate=1
-} else if (cliccate==1) {
-  $("#quadrato2").addClass("quadratogrande");
-  $("#quadratino2").addClass("quadratopiccolo");
-  $("#quadrato2").removeClass("girare");
-  $("#quadratino2").removeClass("rotate2");
-  cliccate=0
-}
-}
-$("#hobby").on("click", contatore2)
-
-
-function contatore3 ()
-{
-if (cliccate==0) {
-  iquadrati3ruotano()
-  cliccate=1
-} else if (cliccate==1) {
-  $("#quadrato3").addClass("quadratogrande");
-  $("#quadratino3").addClass("quadratopiccolo");
-  $("#quadrato3").removeClass("girare");
-  $("#quadratino3").removeClass("rotate2");
-  cliccate=0
-}
-}
-$("#lavori").on("click", contatore3)
-
-//An image to overlay
-$overlay.append($image);
-
-//Add overlay
-$("body").append($overlay);
-
-  //click the image and a scaled version of the full size image will appear
-  $("#photo-gallery a").click( function(event) {
-    event.preventDefault();
-    var imageLocation = $(this).attr("href");
-
-    //update overlay with the image linked in the link
-    $image.attr("src", imageLocation);
-
-    //show the overlay
-    $overlay.show();
-  } );
-
-  $("#overlay").click(function() {
-    $( "#overlay" ).hide();
-  });
-
-</script>
+  <script src="./photo_gallery.js"></script>
 </body>
+
 </html>
